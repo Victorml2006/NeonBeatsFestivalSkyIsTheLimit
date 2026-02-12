@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEONWAVE Festival</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   VARIABLES Y RESET
+========================= */
+:root {
+    --neon-pink: #ff00cc;
+    --neon-blue: #00f0ff;
+    --neon-purple: #7a00ff;
+    --dark-bg: #0a0a0f;
+    --glass-bg: rgba(255,255,255,0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--dark-bg);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--neon-pink);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), #0a0a0f);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+.btn-neon {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    border: 2px solid var(--neon-pink);
+    color: var(--neon-pink);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-neon:hover {
+    background: var(--neon-pink);
+    color: black;
+    box-shadow: 0 0 20px var(--neon-pink);
+}
+
+/* =========================
+   SECCIONES GENERALES
+========================= */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+section h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--neon-blue);
+}
+
+/* =========================
+   ARTISTAS
+========================= */
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.artist-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--neon-purple);
+}
+
+.artist-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.artist-card h3 {
+    margin-top: 15px;
+}
+
+/* =========================
+   TICKETS
+========================= */
+.tickets {
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+}
+
+.ticket-box {
+    background: rgba(0,0,0,0.6);
+    padding: 40px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* =========================
+   GALERÍA
+========================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   BLOG
+========================= */
+.blog-post {
+    background: var(--glass-bg);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #111;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.socials a {
+    color: var(--neon-blue);
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: var(--neon-pink);
+    color: black;
+    cursor: pointer;
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero h1 {
+    animation: float 4s ease-in-out infinite;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NEONWAVE</div>
+    <nav>
+        <a href="#">Artistas</a>
+        <a href="#">Info</a>
+        <a href="#">Tickets</a>
+        <a href="#">Galería</a>
+        <a href="#">Blog</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>NEONWAVE FEST 2026</h1>
+        <p>La experiencia electrónica más futurista del año</p>
+        <a href="#" class="btn-neon">Comprar Tickets</a>
+    </div>
+</section>
+
+<section>
+    <h2>Cartel de Artistas</h2>
+    <div class="artists-grid">
+        <div class="artist-card">
+            <img src="https://images.unsplash.com/photo-1497032205916-ac775f0649ae" alt="">
+            <h3>DJ Nova</h3>
+            <p>Techno futurista y sonidos espaciales.</p>
+        </div>
+        <div class="artist-card">
+            <img src="https://images.unsplash.com/photo-1518972559570-0c3bfa9f7c0b" alt="">
+            <h3>Electra Pulse</h3>
+            <p>House vibrante con energía explosiva.</p>
+        </div>
+    </div>
+</section>
+
+<section class="tickets">
+    <h2>Tickets</h2>
+    <div class="ticket-box">
+        <p>Entrada General desde $59</p>
+        <p>VIP desde $120</p>
+        <a href="#" class="btn-neon">Comprar Ahora</a>
+    </div>
+</section>
+
+<section>
+    <h2>Galería</h2>
+    <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
+        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745">
+        <img src="https://images.unsplash.com/photo-1464375117522-1311dd6a5b0c">
+    </div>
+</section>
+
+<section>
+    <h2>Blog & Noticias</h2>
+    <div class="blog-post">
+        <h3>Lineup confirmado</h3>
+        <p>Descubre los nuevos artistas añadidos al cartel oficial.</p>
+    </div>
+    <div class="blog-post">
+        <h3>Nueva zona VIP</h3>
+        <p>Más experiencias exclusivas para los asistentes premium.</p>
+    </div>
+</section>
+
+<footer>
+    <p>Contacto: info@neonwavefest.com</p>
+    <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+    </div>
+    <div class="newsletter">
+        <p>Suscríbete a nuestro newsletter</p>
+        <input type="email" placeholder="Tu correo">
+        <button>Suscribirme</button>
+    </div>
+</footer>
+
+</body>
+</html>

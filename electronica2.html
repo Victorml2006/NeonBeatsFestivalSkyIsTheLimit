@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Beats Festival</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:black;
+  font-family:'Poppins', sans-serif;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:#0a0a0a;
+  border-bottom:2px solid #ff007f;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+nav a{
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#00ffff;
+}
+
+/* HERO SECTION */
+.hero{
+  position:relative;
+  text-align:center;
+  padding:100px 20px;
+  background:black;
+}
+
+/* Vertical neon lines */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(0,255,255,0.2) 0px,
+    rgba(0,255,255,0.2) 2px,
+    transparent 2px,
+    transparent 80px
+  );
+  animation: glowLines 3s infinite alternate;
+  z-index:0;
+}
+
+@keyframes glowLines{
+  from{opacity:0.4;}
+  to{opacity:0.8;}
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.hero h1{
+  font-family:'Orbitron', sans-serif;
+  font-size:4rem;
+  color:#00ffff;
+  text-shadow:0 0 15px #00ffff, 0 0 30px #ff00ff;
+}
+
+.hero h2{
+  margin-top:20px;
+  font-weight:600;
+  letter-spacing:3px;
+}
+
+.timer{
+  margin-top:30px;
+  font-size:2rem;
+  font-family:'Orbitron';
+  color:#ff00ff;
+  text-shadow:0 0 10px #ff00ff;
+}
+
+/* SECTIONS */
+section{
+  padding:80px 10%;
+}
+
+.section-title{
+  font-family:'Orbitron';
+  font-size:2rem;
+  margin-bottom:40px;
+  color:#00ffff;
+  text-shadow:0 0 10px #00ffff;
+}
+
+.two-columns{
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.two-columns div{
+  flex:1;
+  min-width:280px;
+}
+
+.neon-box{
+  background:#111;
+  padding:30px;
+  border-radius:15px;
+  border:2px solid #ff00ff;
+  box-shadow:0 0 15px #ff00ff;
+}
+
+/* EXPERIENCIA IMAGE PLACEHOLDER */
+.image-box{
+  height:250px;
+  background:linear-gradient(45deg,#00ffff,#ff00ff);
+  border-radius:15px;
+  box-shadow:0 0 20px #00ffff;
+}
+
+/* NEON WORDS */
+.neon-text{
+  font-size:2.5rem;
+  font-family:'Orbitron';
+  text-align:center;
+  margin:40px 0;
+}
+
+.pink{color:#ff007f;text-shadow:0 0 10px #ff007f;}
+.blue{color:#00ffff;text-shadow:0 0 10px #00ffff;}
+.green{color:#00ff88;text-shadow:0 0 10px #00ff88;}
+
+/* VIDEO SECTION */
+.video-frame{
+  display:flex;
+  justify-content:center;
+  margin:40px 0;
+}
+
+.video-frame div{
+  width:300px;
+  height:500px;
+  border:4px solid #00ffff;
+  box-shadow:0 0 25px #00ffff;
+  border-radius:20px;
+}
+
+/* TICKETS */
+.tickets{
+  background:url('https://images.unsplash.com/photo-1518972559570-7cc1309f3229?q=80&w=1600&auto=format&fit=crop') center/cover;
+  text-align:center;
+  padding:100px 20px;
+  position:relative;
+}
+
+.tickets::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+}
+
+.tickets-content{
+  position:relative;
+  z-index:2;
+}
+
+.ticket-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 40px;
+  background:#ff007f;
+  color:white;
+  font-weight:700;
+  text-decoration:none;
+  border-radius:10px;
+  box-shadow:0 0 15px #ff007f;
+  transition:.3s;
+}
+
+.ticket-btn:hover{
+  background:#00ffff;
+  box-shadow:0 0 20px #00ffff;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#0a0a0a;
+  border-top:2px solid #ff007f;
+  font-size:0.9rem;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <h3 style="color:#ff00ff;font-family:Orbitron;">NEON</h3>
+  <ul>
+    <li><a href="#">Festival</a></li>
+    <li><a href="#">Artistas</a></li>
+    <li><a href="#">Experiencias</a></li>
+    <li><a href="#">Entradas</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>NEON BEATS</h1>
+    <h2>5–7 AGOSTO 2026<br>COSTA DEL SOL</h2>
+    <div class="timer">11 : 20 : 38 : 12</div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">ARTISTAS INVITADOS</h2>
+  <div class="two-columns">
+    <div class="neon-box">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vibra con DJs internacionales y talento emergente.</p>
+    </div>
+    <div class="image-box"></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">LA EXPERIENCIA</h2>
+  <div class="two-columns">
+    <div class="image-box"></div>
+    <div class="neon-box">
+      <p>Luces, energía, visuales impactantes y escenarios inmersivos. Vive el futuro de la música electrónica.</p>
+    </div>
+  </div>
+</section>
+
+<div class="neon-text pink">Siente el Beat</div>
+<div class="neon-text blue">Sé parte del Futuro</div>
+<div class="neon-text green">Party • Party • Party</div>
+
+<section class="video-frame">
+  <div></div>
+</section>
+
+<section class="tickets">
+  <div class="tickets-content">
+    <h2 class="section-title">COMPRA TU ENTRADA AQUÍ</h2>
+    <a href="#" class="ticket-btn">CONSEGUIR TICKET</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Neon Beats Festival – Todos los derechos reservados
+</footer>
+
+</body>
+</html>
