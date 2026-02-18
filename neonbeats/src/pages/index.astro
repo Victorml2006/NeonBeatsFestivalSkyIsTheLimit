@@ -1,13 +1,137 @@
----
-import Welcome from '../components/Welcome.astro';
+﻿---
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Tickets from './Tickets.astro';
 ---
 
 <Layout>
-	<header></header>
-	<h1>NeonBeats Festival</h1>
-	<footer></footer>
+<!-- ARTISTAS -->
+<section>
+  <h2 class="section-title">ARTISTAS INVITADOS</h2>
+
+  <div class="content">
+    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745" alt="DJ">
+
+    <div class="text">
+		<li>
+			<ul>Martin Garrix - Mainstage / EDM, uno de los mas grandes del mundo.</ul>
+		</li>
+
+		<li>
+			<ul>David Guetta - Leyenda del EDM y colaboraciones pop masivas.</ul>
+		</li>
+
+		<li>
+			<ul>Tiesto - Historico y aun en los festivales mas grandes.</ul>
+		</li>
+
+		<li>
+			<ul>Calvin Harris - EDM y pop electronico, hits internacionales.</ul>
+		</li>
+
+		<li>
+			<ul>Armin van Buuren - Trance iconico, influyente por decadas.</ul>
+		</li>
+
+		<li>
+			<ul>Swedish House Mafia - Trance iconico, influyente por decadas.</ul>
+		</li>
+
+		<li>
+			<ul>Charlotte de Witte - Techno moderno, reina de festivales europeos.</ul>
+		</li>
+
+		<li>
+			<ul>Skrillex - Bass / Dubstep, pionero y mega influyente en el genero.</ul>
+		</li>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIAS -->
+<section>
+  <h2 class="section-title">EXPERIENCIAS</h2>
+
+  <div class="content reverse">
+    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1200&auto=format&fit=crop" alt="Festival">
+
+    <div class="text">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to</p>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever since the</p>
+    </div>
+  </div>
+</section>
+
+<Tickets />
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#000;
+  color:#fff;
+  font-family:'Poppins', sans-serif;
+}
+
+section{
+  padding:100px 12%;
+}
+
+.section-title{
+  font-family:'Orbitron', sans-serif;
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:3px;
+  margin-bottom:60px;
+}
+
+.content{
+  display:flex;
+  align-items:center;
+  gap:60px;
+}
+
+.content.reverse{
+  flex-direction:row-reverse;
+}
+
+.content img{
+  width:500px;
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+.text{
+  max-width:500px;
+  font-size:18px;
+  line-height:1.7;
+  color:#ddd;
+}
+
+.text p{
+  margin-bottom:20px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+
+  .content,
+  .content.reverse{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .section-title{
+    text-align:center;
+  }
+
+}
+
+</style>
 </Layout>
