@@ -1,15 +1,11 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
 
 <!-- ARTISTAS -->
-<section>
+<section class="artists-section">
   <h2 class="section-title">ARTISTAS INVITADOS</h2>
 
   <div class="content">
@@ -66,6 +62,459 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
+<!-- NEON HERO SECTION -->
+<main class="neon-hero">
+  <div class="stars"></div>
+  
+  <div class="container">
+    <!-- DJ Icon -->
+    <div class="dj-section">
+      <svg class="dj-icon" viewBox="0 0 500 550" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <filter id="blur-glow">
+            <feGaussianBlur stdDeviation="4"/>
+          </filter>
+        </defs>
+        
+        <!-- Glow background effect -->
+        <ellipse cx="250" cy="350" rx="200" ry="150" fill="#ff1493" opacity="0.1" filter="url(#blur-glow)"/>
+        <ellipse cx="250" cy="350" rx="150" ry="100" fill="#00ffff" opacity="0.08" filter="url(#blur-glow)"/>
+        
+        <!-- Decks Base -->
+        <path d="M 80 300 L 420 300 L 430 450 L 70 450 Z" fill="none" stroke="#00ffff" stroke-width="4" filter="url(#glow)" stroke-linejoin="round"/>
+        <rect x="75" y="305" width="350" height="140" rx="8" fill="none" stroke="#ff1493" stroke-width="3" filter="url(#glow)"/>
+        
+        <!-- Left Turntable outer -->
+        <circle cx="140" cy="375" r="55" fill="none" stroke="#00ffff" stroke-width="4" filter="url(#glow)"/>
+        <circle cx="140" cy="375" r="45" fill="none" stroke="#ff1493" stroke-width="3" filter="url(#glow)"/>
+        <circle cx="140" cy="375" r="35" fill="none" stroke="#00ffff" stroke-width="2" filter="url(#glow)"/>
+        <circle cx="140" cy="375" r="15" fill="#00ffff" filter="url(#glow)"/>
+        
+        <!-- Right Turntable outer -->
+        <circle cx="360" cy="375" r="55" fill="none" stroke="#00ffff" stroke-width="4" filter="url(#glow)"/>
+        <circle cx="360" cy="375" r="45" fill="none" stroke="#ff1493" stroke-width="3" filter="url(#glow)"/>
+        <circle cx="360" cy="375" r="35" fill="none" stroke="#00ffff" stroke-width="2" filter="url(#glow)"/>
+        <circle cx="360" cy="375" r="15" fill="#00ffff" filter="url(#glow)"/>
+        
+        <!-- Center control panel -->
+        <rect x="200" y="320" width="100" height="110" rx="8" fill="none" stroke="#00ffff" stroke-width="2" filter="url(#glow)"/>
+        
+        <!-- Control buttons left column -->
+        <circle cx="215" cy="335" r="5" fill="#ff1493" filter="url(#glow)"/>
+        <circle cx="215" cy="355" r="5" fill="#7fff00" filter="url(#glow)"/>
+        <circle cx="215" cy="375" r="5" fill="#ff6600" filter="url(#glow)"/>
+        <circle cx="215" cy="395" r="5" fill="#00ffff" filter="url(#glow)"/>
+        
+        <!-- Control buttons right column -->
+        <circle cx="285" cy="335" r="5" fill="#ff1493" filter="url(#glow)"/>
+        <circle cx="285" cy="355" r="5" fill="#7fff00" filter="url(#glow)"/>
+        <circle cx="285" cy="375" r="5" fill="#ff6600" filter="url(#glow)"/>
+        <circle cx="285" cy="395" r="5" fill="#00ffff" filter="url(#glow)"/>
+        
+        <!-- Center fader -->
+        <rect x="245" y="335" width="10" height="60" rx="2" fill="#ff1493" filter="url(#glow)"/>
+        
+        <!-- DJ Body - Hoodie -->
+        <ellipse cx="250" cy="180" rx="70" ry="85" fill="none" stroke="#ff1493" stroke-width="3" filter="url(#glow)"/>
+        <path d="M 190 180 Q 180 220 190 250" fill="none" stroke="#ff1493" stroke-width="3" filter="url(#glow)" stroke-linecap="round"/>
+        <path d="M 310 180 Q 320 220 310 250" fill="none" stroke="#ff1493" stroke-width="3" filter="url(#glow)" stroke-linecap="round"/>
+        
+        <!-- Hood outline -->
+        <path d="M 200 140 Q 250 100 300 140 Q 280 150 250 150 Q 220 150 200 140" fill="none" stroke="#00ffff" stroke-width="2" filter="url(#glow)"/>
+        
+        <!-- DJ Head -->
+        <circle cx="250" cy="90" r="40" fill="none" stroke="#00ffff" stroke-width="4" filter="url(#glow)"/>
+        
+        <!-- Left Headphone Cup -->
+        <circle cx="160" cy="60" r="30" fill="none" stroke="#00ffff" stroke-width="4" filter="url(#glow)"/>
+        <circle cx="160" cy="60" r="20" fill="none" stroke="#ff1493" stroke-width="2" filter="url(#glow)"/>
+        
+        <!-- Right Headphone Cup -->
+        <circle cx="340" cy="60" r="30" fill="none" stroke="#00ffff" stroke-width="4" filter="url(#glow)"/>
+        <circle cx="340" cy="60" r="20" fill="none" stroke="#ff1493" stroke-width="2" filter="url(#glow)"/>
+        
+        <!-- Headphone band left -->
+        <path d="M 140 50 Q 120 20 160 20" fill="none" stroke="#ff1493" stroke-width="3" filter="url(#glow)" stroke-linecap="round"/>
+        
+        <!-- Headphone band right -->
+        <path d="M 360 20 Q 380 20 360 50" fill="none" stroke="#ff1493" stroke-width="3" filter="url(#glow)" stroke-linecap="round"/>
+        
+        <!-- Headphone band top -->
+        <path d="M 160 25 Q 250 -10 340 25" fill="none" stroke="#00ffff" stroke-width="3" filter="url(#glow)" stroke-linecap="round"/>
+        
+        <!-- Visor/Glasses left -->
+        <rect x="215" y="75" width="22" height="25" rx="4" fill="none" stroke="#ff1493" stroke-width="2" filter="url(#glow)"/>
+        <line x1="237" y1="87" x2="263" y2="87" stroke="#ff1493" stroke-width="2" filter="url(#glow)"/>
+        
+        <!-- Visor/Glasses right -->
+        <rect x="263" y="75" width="22" height="25" rx="4" fill="none" stroke="#ff1493" stroke-width="2" filter="url(#glow)"/>
+        
+        <!-- Eyes glow -->
+        <circle cx="220" cy="82" r="3" fill="#00ffff" filter="url(#glow)"/>
+        <circle cx="268" cy="82" r="3" fill="#00ffff" filter="url(#glow)"/>
+        
+        <!-- Left arm/hand -->
+        <path d="M 185 210 Q 130 280 120 350" fill="none" stroke="#ff1493" stroke-width="4" filter="url(#glow)" stroke-linecap="round"/>
+        <circle cx="120" cy="355" r="18" fill="none" stroke="#00ffff" stroke-width="3" filter="url(#glow)"/>
+        
+        <!-- Right arm/hand -->
+        <path d="M 315 210 Q 370 280 380 350" fill="none" stroke="#ff1493" stroke-width="4" filter="url(#glow)" stroke-linecap="round"/>
+        <circle cx="380" cy="355" r="18" fill="none" stroke="#00ffff" stroke-width="3" filter="url(#glow)"/>
+        
+        <!-- Body center line -->
+        <line x1="250" y1="180" x2="250" y2="270" stroke="#00ffff" stroke-width="2" filter="url(#glow)"/>
+        
+        <!-- DJ's label "DJ's" -->
+        <text x="250" y="490" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="none" stroke="#ff1493" stroke-width="2" filter="url(#glow)">DJ's</text>
+        
+        <!-- Music bars on right -->
+        <g filter="url(#glow)">
+          <rect x="420" y="240" width="12" height="50" fill="none" stroke="#ff1493" stroke-width="2"/>
+          <rect x="420" y="210" width="12" height="80" fill="none" stroke="#00ffff" stroke-width="2"/>
+          <rect x="440" y="220" width="12" height="70" fill="none" stroke="#7fff00" stroke-width="2"/>
+          <rect x="460" y="200" width="12" height="90" fill="none" stroke="#ff6600" stroke-width="2"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Main Title -->
+    <div class="main-title">
+      <h1 class="title-line-1">siente el</h1>
+      <h1 class="title-line-2">heat</h1>
+      <h1 class="title-line-3">se parte del</h1>
+      <h1 class="title-line-4">futuro</h1>
+    </div>
+
+    <!-- Party Text -->
+    <div class="party-section">
+      <p class="party-pink">PARTY!!</p>
+      <p class="party-pink">PARTY!!</p>
+      <p class="party-green">PARTY!!</p>
+    </div>
+
+    <!-- Experience Text -->
+    <div class="experience-text">
+      <p>Vive la experiencia<br>que marcará el<br>último año <br>de tu vida!!</p>
+    </div>
+
+    <!-- Love You Text -->
+    <div class="love-text">
+      <p>love<br>you<br>baby</p>
+    </div>
+
+    <!-- Pleasure Text -->
+    <div class="pleasure-text">
+      <p>placer<br>que<br>vibra</p>
+    </div>
+
+    <!-- Cartel -->
+    <div class="cartel-text">
+      <p>CARTEL</p>
+    </div>
+  </div>
+</main>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;700&display=swap');
+
+  .neon-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(2px 2px at 20% 30%, #eee, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 60% 70%, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 50% 50%, #ddd, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 80% 10%, #fff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 90% 60%, #eee, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 30% 80%, #ddd, rgba(0,0,0,0));
+    background-size: 200% 200%;
+    animation: twinkle 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .neon-hero .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    perspective: 1000px;
+  }
+
+  /* DJ Section */
+  .dj-section {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 150px;
+    height: 150px;
+  }
+
+  .dj-icon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .dj-turntable {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #ff00ff, #ff00ff);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+      0 0 20px #ff00ff,
+      0 0 40px #ff00ff,
+      0 0 60px #ff00ff,
+      inset -2px -2px 20px rgba(0,0,0,0.5);
+    border: 2px solid #ff00ff;
+  }
+
+  .dj-turntable::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #00ffff, #00ffff);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px #00ffff;
+  }
+
+  .dj-headphones-left,
+  .dj-headphones-right {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    border-radius: 50% 50% 20% 20%;
+    box-shadow: 0 0 15px #00ffff, inset 0 0 10px rgba(0,0,0,0.5);
+    top: 5px;
+  }
+
+  .dj-headphones-left {
+    left: -10px;
+    transform: rotateZ(-45deg);
+  }
+
+  .dj-headphones-right {
+    right: -10px;
+    transform: rotateZ(45deg);
+  }
+
+  /* Main Title */
+  .main-title {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+  }
+
+  .main-title h1 {
+    margin: 5px 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: lowercase;
+  }
+
+  .title-line-1 {
+    color: #fff;
+    text-shadow: 
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff;
+  }
+
+  .title-line-2 {
+    color: #00ffff;
+    text-shadow: 
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff,
+      0 0 40px #00ffff;
+    font-size: 4rem;
+  }
+
+  .title-line-3 {
+    color: #00ffff;
+    text-shadow: 
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff;
+  }
+
+  .title-line-4 {
+    color: #00ffff;
+    text-shadow: 
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff,
+      0 0 40px #00ffff;
+  }
+
+  /* Party Section */
+  .party-section {
+    position: absolute;
+    right: 3%;
+    top: 12%;
+    text-align: right;
+  }
+
+  .party-pink,
+  .party-green {
+    margin: 8px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .party-pink {
+    color: #ff1493;
+    text-shadow: 
+      0 0 1px #ff1493,
+      0 0 2px #ff1493,
+      0 0 40px #ff1493,
+      0 0 50px #ff1493;
+  }
+
+  .party-green {
+    color: #7fff00;
+    text-shadow: 
+      0 0 1px #7fff00,
+      0 0 2px #7fff00,
+      0 0 40px #7fff00,
+      0 0 50px #7fff00;
+  }
+
+  /* Experience Text */
+  .experience-text {
+    position: absolute;
+    left: 2%;
+    top: 40%;
+    color: #0088ff;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    font-style: italic;
+    text-shadow: 
+      0 0 10px #0088ff,
+      0 0 20px #0088ff,
+      0 0 30px #0088ff;
+    max-width: 250px;
+  }
+
+  /* Love You Text */
+  .love-text {
+    position: absolute;
+    right: 15%;
+    top: 35%;
+    color: #00ff00;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    font-weight: 700;
+    text-shadow: 
+      0 0 10px #00ff00,
+      0 0 20px #00ff00,
+      0 0 30px #00ff00;
+  }
+
+  /* Pleasure Text */
+  .pleasure-text {
+    position: absolute;
+    right: 2%;
+    top: 65%;
+    color: #ff6600;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    text-shadow: 
+      0 0 10px #ff6600,
+      0 0 20px #ff6600,
+      0 0 30px #ff6600;
+  }
+
+  /* Cartel Text */
+  .cartel-text {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ff1493;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 
+      0 0 10px #ff1493,
+      0 0 20px #ff1493,
+      0 0 30px #ff1493,
+      0 0 40px #ff1493,
+      0 0 50px #ff1493;
+  }
+
+  @media (max-width: 768px) {
+    .main-title h1 {
+      font-size: 2rem;
+    }
+
+    .title-line-2 {
+      font-size: 2.5rem;
+    }
+
+    .party-pink,
+    .party-green {
+      font-size: 1.5rem;
+    }
+
+    .title-line-1,
+    .title-line-2,
+    .title-line-3,
+    .title-line-4 {
+      text-shadow: 
+        0 0 5px,
+        0 0 10px,
+        0 0 15px;
+    }
+
+    .cartel-text {
+      font-size: 2rem;
+    }
+  }
+</style>
 
 <style>
 
