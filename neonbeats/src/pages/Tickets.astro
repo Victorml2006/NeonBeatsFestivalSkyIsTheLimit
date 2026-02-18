@@ -1,0 +1,171 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<main class="pagina-entradas">
+		<section class="portada-entradas" aria-labelledby="titulo-entradas">
+			<h1 id="titulo-entradas">COMPRA TU ENTRADA<br />AQUI</h1>
+
+			<a class="boleto" href="#" aria-label="Comprar entrada">
+				<span class="lateral izquierda">IC SIREM</span>
+				<span class="centro">
+					<small>NARTIEL BECUNG TOIDERARE</small>
+					<strong>TICKET</strong>
+					<small>MCTING MERVELOBAL ERGALES</small>
+				</span>
+				<span class="lateral derecha">TIOSIET</span>
+			</a>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap');
+
+	:global(body) {
+		background: #080414;
+	}
+
+	.pagina-entradas {
+		min-height: 100vh;
+		padding-bottom: 140px;
+		display: flex;
+		align-items: end;
+		justify-content: center;
+		background-image:
+			linear-gradient(180deg, rgba(7, 2, 20, 0.35) 0%, rgba(7, 2, 20, 0.8) 100%),
+			url('https://images.unsplash.com/photo-1571266028243-d220c9a2f8ff?auto=format&fit=crop&w=2200&q=80');
+		background-size: cover;
+		background-position: center;
+	}
+
+	.portada-entradas {
+		width: min(100%, 1200px);
+		padding: 72px 24px 56px;
+		text-align: center;
+	}
+
+	#titulo-entradas {
+		margin: 0 0 44px;
+		font-family: 'Orbitron', sans-serif;
+		font-size: clamp(2rem, 6vw, 4.6rem);
+		font-weight: 900;
+		line-height: 0.95;
+		letter-spacing: 0.05em;
+		color: #f8f7ff;
+		text-transform: uppercase;
+		text-shadow:
+			0 0 14px rgba(255, 255, 255, 0.35),
+			0 0 40px rgba(178, 132, 255, 0.35);
+	}
+
+	.boleto {
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 74px 1fr 74px;
+		width: min(760px, 100%);
+		text-decoration: none;
+		color: #fff;
+		filter:
+			drop-shadow(0 0 14px rgba(0, 217, 255, 0.85))
+			drop-shadow(0 0 24px rgba(255, 27, 219, 0.9));
+	}
+
+	.lateral,
+	.centro {
+		display: grid;
+		place-items: center;
+		min-height: 180px;
+	}
+
+	.lateral {
+		font-family: 'Rajdhani', sans-serif;
+		font-weight: 700;
+		font-size: 0.9rem;
+		letter-spacing: 0.22em;
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+		text-transform: uppercase;
+		color: #baf6ff;
+		border-top: 3px solid #26d7ff;
+		border-bottom: 3px solid #26d7ff;
+		background: rgba(0, 180, 255, 0.3);
+	}
+
+	.izquierda {
+		border-left: 3px solid #26d7ff;
+		border-top-left-radius: 18px;
+		border-bottom-left-radius: 18px;
+	}
+
+	.derecha {
+		border-right: 3px solid #ff3af3;
+		border-top: 3px solid #ff3af3;
+		border-bottom: 3px solid #ff3af3;
+		border-top-right-radius: 18px;
+		border-bottom-right-radius: 18px;
+		background: rgba(255, 21, 202, 0.3);
+		color: #ffd6ff;
+	}
+
+	.centro {
+		padding: 24px 18px;
+		border-top: 3px solid #ff3af3;
+		border-bottom: 3px solid #ff3af3;
+		background:
+			radial-gradient(circle at 0% 50%, rgba(0, 229, 255, 0.24), transparent 40%),
+			radial-gradient(circle at 100% 50%, rgba(255, 40, 238, 0.28), transparent 45%),
+			linear-gradient(90deg, rgba(0, 140, 255, 0.16) 0%, rgba(255, 45, 230, 0.28) 100%);
+		text-transform: uppercase;
+	}
+
+	.centro small {
+		font-family: 'Rajdhani', sans-serif;
+		font-size: 0.92rem;
+		letter-spacing: 0.18em;
+		opacity: 0.95;
+	}
+
+	.centro strong {
+		display: block;
+		font-family: 'Orbitron', sans-serif;
+		font-size: clamp(2.4rem, 7vw, 5rem);
+		line-height: 1;
+		letter-spacing: 0.08em;
+		color: #ffdeff;
+		text-shadow:
+			0 0 14px rgba(255, 98, 246, 0.95),
+			0 0 32px rgba(255, 34, 225, 0.88),
+			0 0 48px rgba(51, 212, 255, 0.9);
+	}
+
+	@media (max-width: 780px) {
+		.pagina-entradas {
+			padding-bottom: 120px;
+		}
+
+		#titulo-entradas {
+			margin-bottom: 28px;
+		}
+
+		.boleto {
+			grid-template-columns: 56px 1fr 56px;
+		}
+
+		.lateral,
+		.centro {
+			min-height: 138px;
+		}
+
+		.lateral {
+			font-size: 0.72rem;
+			letter-spacing: 0.15em;
+		}
+
+		.centro small {
+			font-size: 0.74rem;
+			letter-spacing: 0.13em;
+		}
+	}
+</style>
