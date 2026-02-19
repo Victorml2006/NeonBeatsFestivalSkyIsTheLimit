@@ -1,0 +1,161 @@
+---
+const colores = ["rgb(61, 222, 56)","purple","yellow","red","palevioletred","rgb(85, 198, 251)"];
+
+const leds = [];
+const cantidad = 100
+
+for (let i = 0; i < cantidad; i++) {
+    const numColor = Math.floor(Math.random() * colores.length);
+    const alt = Math.floor((Math.random() * 900) +220)+"px";
+    const izq = (Math.random() * 2000)+"px";
+    const delay = (Math.random() * 2)+"s";
+    leds.push({
+        color: colores[numColor],
+        altura : alt,
+        izquierda: izq,
+        delay : delay
+    })
+}
+---
+
+<div id="total">
+    <div id="logo">
+       <img src="./images/logo.png" alt=""/> 
+    </div>
+    <h1>05-07 AGOSTO</h1>
+    <h1>COSTA DEL SOL</h1>
+    <div id="divCountDown">
+        <div id="horaTotal">
+            <div id="dias"></div>
+            <div class="puntos">:</div>
+            <div id="horas"></div>
+            <div class="puntos">:</div>
+            <div id="minutos"></div>
+            <div class="puntos">:</div>
+            <div id="segundos"></div>
+        </div>
+        <div id="unidadesTiempo">
+            <div id="diasU">Días</div>
+            <div id="horasU">Horas</div>
+            <div id="minutosU">Minutos</div>
+            <div id="segundosU">Segundos</div>
+        </div>
+    </div>
+    {leds.map(l => (<div class="aleatorio" style={`background-color: ${l.color}; height: ${l.altura}; left: ${l.izquierda}; animation-delay: ${l.delay}; box-shadow: 0px 0px 20px 5px ${l.color};`}></div>))}
+</div>
+
+<script>
+    const fechaObjetivo = new Date("2026-08-05:00:00:0000");
+    function cambiaCuenta(){
+        let fechaActual = new Date(Date.now());
+        let diferencia = fechaObjetivo-fechaActual;
+        let dias = Math.floor(diferencia/(1000*60*60*24));
+        let horas = Math.floor((diferencia/(1000*60*60))%24);
+        let minutos = Math.floor((diferencia/(1000*60))%60);
+        let segundos = Math.floor((diferencia/(1000))%60);
+        let cuenta = dias+" : "+horas+" : "+minutos+" : "+segundos;
+        //document.getElementById("horaTotal").innerText=cuenta
+        document.getElementById("dias").innerText = dias;
+        document.getElementById("horas").innerText = horas;
+        document.getElementById("minutos").innerText = minutos;
+        document.getElementById("segundos").innerText = segundos;
+    }
+
+    cambiaCuenta()
+
+    let x = setInterval(cambiaCuenta,1000);
+    
+</script>
+
+    <style>
+
+        @font-face {
+            font-family: Neon;
+            src: url(/fonts/VipnagorgiallaBd.otf);
+        }
+
+        h1{
+            font-size:30px;
+            margin:0;
+            z-index: 4;
+        }
+
+        #total{
+            background-color: rgb(4, 4, 4);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-direction: column;
+            font-size: 30px;
+            color: white;
+            font-family: Neon;
+        }
+
+        #divCountDown{
+            z-index: 4;
+            margin-top: 2em;
+            width: 60%;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #unidadesTiempo,#horaTotal {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+
+        #unidadesTiempo div,#horaTotal div{
+            width: 70px;
+        }
+
+        #unidadesTiempo{
+            font-size: 10px;
+        }
+
+        .puntos{
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #logo{
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        .aleatorio{
+            width: 5px;
+            box-shadow: 0px 0px 5px currentColor;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0.6;
+            animation: bajadaleds 2s ease-in infinite;
+        }
+
+        @keyframes bajadaleds {
+            0%{
+                transform: translateY(-800px);
+                visibility: visible;
+            }
+            100%{
+                transform: translateY(1000px);
+                visibility: visible;
+            }
+        }
+    </style>
+
