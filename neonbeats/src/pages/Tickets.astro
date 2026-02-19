@@ -1,35 +1,41 @@
 ﻿<section class="seccion-ticket" aria-label="Zona de entradas">
-	<img
-		class="imagen-ticket"
-		src="/images/ChatGPT Image Feb 18, 2026, 08_41_49 PM.png"
-		alt="Ticket neon del festival"
-		loading="lazy"
-	/>
+    <img
+        class="imagen-ticket"
+        src="/images/ChatGPT Image Feb 18, 2026, 09_13_48 PM.png"
+        alt="Ticket neon del festival"
+        loading="lazy"
+    />
 </section>
 
 <style>
-	.seccion-ticket {
-		width: 100%;
-		margin: 0;
-		padding: 0 0 140px;
-	}
+   .seccion-ticket {
+	width: 100%;
+	margin: 0;
+	padding: 0 0 140px;
+	position: relative;   
+	overflow: hidden;
+}
 
-	.imagen-ticket {
-		display: block;
-		width: 100vw;
-		height: auto;
-		max-height: 100vh;
-		object-fit: cover;
-		object-position: center;
-	}
+.imagen-ticket {
+	display: block;
+	width: 100vw;
+	height: auto;
+	max-height: 100vh;
+	object-fit: cover;
+	object-position: center;
+}
 
-	@media (max-width: 780px) {
-		.seccion-ticket {
-			padding-bottom: 120px;
-		}
+.seccion-ticket::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
 
-		.imagen-ticket {
-			max-height: none;
-		}
-	}
+	background: radial-gradient(
+		circle at center,
+		transparent 45%,
+		rgba(0,0,0,0.6) 52%,
+		black 100%
+	);
+}
 </style>
