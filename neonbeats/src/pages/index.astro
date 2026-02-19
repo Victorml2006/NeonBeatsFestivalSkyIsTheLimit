@@ -5,13 +5,13 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 
 <!-- ARTISTAS -->
-<section class="artists-section">
-  <h2 class="section-title">ARTISTAS INVITADOS</h2>
+<section class="seccion-artistas">
+  <h2 class="titulo-seccion">ARTISTAS INVITADOS</h2>
 
-  <div class="content">
+  <div class="contenido">
     <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745" alt="DJ">
 
-    <div class="text">
+    <div class="texto">
 		<li>
 			<ul>Martin Garrix – Mainstage / EDM, uno de los más grandes del mundo.</ul>
 		</li>
@@ -49,12 +49,12 @@ import Layout from '../layouts/Layout.astro';
 
 <!--EXPERIENCIAS -->
 <section>
-  <h2 class="section-title">EXPERIENCIAS</h2>
+  <h2 class="titulo-seccion">EXPERIENCIAS</h2>
 
-  <div class="content reverse">
+  <div class="contenido inverso">
     <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1200&auto=format&fit=crop" alt="Festival">
 
-    <div class="text">
+    <div class="texto">
       <p>Baila al ritmo de la música electrónica junto al mar, con DJs internacionales y un ambiente lleno de energía. Disfruta de la playa, luces, efectos visuales y momentos inolvidables junto a miles de asistentes que comparten tu pasión por la música.</p>
       <p>Sumérgete en una experiencia única bailando al ritmo de la música electrónica frente al mar, donde las olas se mezclan con los beats más electrizantes.</p> 
       <p>Déjate llevar por sets de DJs internacionales que harán vibrar cada rincón del escenario, mientras luces deslumbrantes, láseres y efectos visuales crean un espectáculo sensorial que despierta todos tus sentidos.</p>
@@ -63,13 +63,13 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- NEON HERO SECTION -->
-<main class="neon-hero">
-  <div class="stars"></div>
+<main class="heroe-neon">
+  <div class="estrellas"></div>
   
-  <div class="container">
+  <div class="contenedor">
     <!-- DJ Icon -->
-    <div class="dj-section">
-      <svg class="dj-icon" viewBox="0 0 500 550" xmlns="http://www.w3.org/2000/svg">
+    <div class="seccion-dj">
+      <svg class="icono-dj" viewBox="0 0 500 550" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -185,38 +185,42 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <!-- Main Title -->
-    <div class="main-title">
-      <h1 class="title-line-1">siente el</h1>
-      <h1 class="title-line-2">heat</h1>
-      <h1 class="title-line-3">se parte del</h1>
-      <h1 class="title-line-4">futuro</h1>
+    <div class="titulo-principal">
+      <h1 class="linea-titulo-1">siente el</h1>
+      <h1 class="linea-titulo-2">heat</h1>
+      <h1 class="linea-titulo-3">se parte de</h1>
+      <h1 class="linea-titulo-4">la música</h1>
     </div>
 
     <!-- Party Text -->
-    <div class="party-section">
-      <p class="party-pink">PARTY!!</p>
-      <p class="party-pink">PARTY!!</p>
-      <p class="party-green">PARTY!!</p>
+    <div class="seccion-fiesta">
+      <p class="fiesta-rosa">PARTY!!</p>
+      <p class="fiesta-rosa">PARTY!!</p>
+      <p class="fiesta-verde">PARTY!!</p>
     </div>
 
     <!-- Experience Text -->
-    <div class="experience-text">
+    <div class="texto-experiencia">
       <p>Vive la experiencia<br>que marcará el<br>último año <br>de tu vida!!</p>
     </div>
 
     <!-- Love You Text -->
-    <div class="love-text">
+    <div class="texto-amor">
       <p>love<br>you<br>baby</p>
     </div>
 
     <!-- Pleasure Text -->
-    <div class="pleasure-text">
-      <p>placer<br>que<br>vibra</p>
+    <div class="texto-placer">
+      <p>El placer<br>que<br>vibra</p>
     </div>
 
     <!-- Cartel -->
-    <div class="cartel-text">
+    <div class="texto-cartel">
       <p>CARTEL</p>
+    </div>
+
+    <div>
+      <img src="camion.webp" alt="camion">
     </div>
   </div>
 </main>
@@ -224,7 +228,7 @@ import Layout from '../layouts/Layout.astro';
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;700&display=swap');
 
-  .neon-hero {
+  .heroe-neon {
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -235,7 +239,7 @@ import Layout from '../layouts/Layout.astro';
     overflow: hidden;
   }
 
-  .stars {
+  .estrellas {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -256,7 +260,7 @@ import Layout from '../layouts/Layout.astro';
     50% { opacity: 1; }
   }
 
-  .neon-hero .container {
+  .heroe-neon .contenedor {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -264,7 +268,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* DJ Section */
-  .dj-section {
+  .seccion-dj {
     position: absolute;
     top: 10%;
     left: 5%;
@@ -272,7 +276,7 @@ import Layout from '../layouts/Layout.astro';
     height: 150px;
   }
 
-  .dj-icon {
+  .icono-dj {
     position: relative;
     width: 100%;
     height: 100%;
@@ -284,7 +288,7 @@ import Layout from '../layouts/Layout.astro';
     50% { transform: translateY(-20px); }
   }
 
-  .dj-turntable {
+  .tornamesa-dj {
     position: absolute;
     width: 80px;
     height: 80px;
@@ -301,7 +305,7 @@ import Layout from '../layouts/Layout.astro';
     border: 2px solid #ff00ff;
   }
 
-  .dj-turntable::before {
+  .tornamesa-dj::before {
     content: '';
     position: absolute;
     width: 40px;
@@ -314,8 +318,8 @@ import Layout from '../layouts/Layout.astro';
     box-shadow: 0 0 15px #00ffff;
   }
 
-  .dj-headphones-left,
-  .dj-headphones-right {
+  .auriculares-dj-izquierda,
+  .auriculares-dj-derecha {
     position: absolute;
     width: 30px;
     height: 40px;
@@ -325,18 +329,18 @@ import Layout from '../layouts/Layout.astro';
     top: 5px;
   }
 
-  .dj-headphones-left {
+  .auriculares-dj-izquierda {
     left: -10px;
     transform: rotateZ(-45deg);
   }
 
-  .dj-headphones-right {
+  .auriculares-dj-derecha {
     right: -10px;
     transform: rotateZ(45deg);
   }
 
   /* Main Title */
-  .main-title {
+  .titulo-principal {
     position: absolute;
     top: 15%;
     left: 50%;
@@ -345,7 +349,7 @@ import Layout from '../layouts/Layout.astro';
     z-index: 10;
   }
 
-  .main-title h1 {
+  .titulo-principal h1 {
     margin: 5px 0;
     font-family: 'Oswald', sans-serif;
     font-size: 3.5rem;
@@ -353,7 +357,7 @@ import Layout from '../layouts/Layout.astro';
     text-transform: lowercase;
   }
 
-  .title-line-1 {
+  .linea-titulo-1 {
     color: #fff;
     text-shadow: 
       0 0 10px #00ffff,
@@ -361,8 +365,8 @@ import Layout from '../layouts/Layout.astro';
       0 0 30px #00ffff;
   }
 
-  .title-line-2 {
-    color: #00ffff;
+  .linea-titulo-2 {
+    color: #fff;
     text-shadow: 
       0 0 10px #00ffff,
       0 0 20px #00ffff,
@@ -371,16 +375,16 @@ import Layout from '../layouts/Layout.astro';
     font-size: 4rem;
   }
 
-  .title-line-3 {
-    color: #00ffff;
+  .linea-titulo-3 {
+    color: #fff;
     text-shadow: 
       0 0 10px #00ffff,
       0 0 20px #00ffff,
       0 0 30px #00ffff;
   }
 
-  .title-line-4 {
-    color: #00ffff;
+  .linea-titulo-4 {
+    color: #fff;
     text-shadow: 
       0 0 10px #00ffff,
       0 0 20px #00ffff,
@@ -389,15 +393,15 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* Party Section */
-  .party-section {
+  .seccion-fiesta {
     position: absolute;
     right: 3%;
     top: 12%;
     text-align: right;
   }
 
-  .party-pink,
-  .party-green {
+  .fiesta-rosa,
+  .fiesta-verde {
     margin: 8px 0;
     font-size: 2.5rem;
     font-weight: 700;
@@ -405,7 +409,7 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: 2px;
   }
 
-  .party-pink {
+  .fiesta-rosa {
     color: #ff1493;
     text-shadow: 
       0 0 1px #ff1493,
@@ -414,7 +418,7 @@ import Layout from '../layouts/Layout.astro';
       0 0 50px #ff1493;
   }
 
-  .party-green {
+  .fiesta-verde {
     color: #7fff00;
     text-shadow: 
       0 0 1px #7fff00,
@@ -424,7 +428,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* Experience Text */
-  .experience-text {
+  .texto-experiencia {
     position: absolute;
     left: 2%;
     top: 40%;
@@ -440,10 +444,10 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* Love You Text */
-  .love-text {
+  .texto-amor {
     position: absolute;
-    right: 15%;
-    top: 35%;
+    right: 25%;
+    top: 45%;
     color: #00ff00;
     font-size: 1.8rem;
     line-height: 1.2;
@@ -455,7 +459,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* Pleasure Text */
-  .pleasure-text {
+  .texto-placer {
     position: absolute;
     right: 2%;
     top: 65%;
@@ -469,14 +473,14 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* Cartel Text */
-  .cartel-text {
+  .texto-cartel {
     position: absolute;
-    bottom: 20%;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
-    color: #ff1493;
+    color: #e0529e;
     font-size: 3.5rem;
-    font-weight: 900;
+    font-weight: 800;
     letter-spacing: 3px;
     text-shadow: 
       0 0 10px #ff1493,
@@ -487,33 +491,34 @@ import Layout from '../layouts/Layout.astro';
   }
 
   @media (max-width: 768px) {
-    .main-title h1 {
+    .titulo-principal h1 {
       font-size: 2rem;
     }
 
-    .title-line-2 {
+    .linea-titulo-2 {
       font-size: 2.5rem;
     }
 
-    .party-pink,
-    .party-green {
+    .fiesta-rosa,
+    .fiesta-verde {
       font-size: 1.5rem;
     }
 
-    .title-line-1,
-    .title-line-2,
-    .title-line-3,
-    .title-line-4 {
+    .linea-titulo-1,
+    .linea-titulo-2,
+    .linea-titulo-3,
+    .linea-titulo-4 {
       text-shadow: 
         0 0 5px,
         0 0 10px,
         0 0 15px;
     }
 
-    .cartel-text {
+    .texto-cartel {
       font-size: 2rem;
     }
   }
+
 </style>
 
 <style>
@@ -534,7 +539,7 @@ section{
   padding:100px 12%;
 }
 
-.section-title{
+.titulo-seccion{
   font-family:'Orbitron', sans-serif;
   font-size:48px;
   font-weight:800;
@@ -542,44 +547,48 @@ section{
   margin-bottom:60px;
 }
 
-.content{
+.seccion-artistas .titulo-seccion{
+  text-align: right;
+}
+
+.contenido{
   display:flex;
   align-items:center;
   gap:60px;
 }
 
-.content.reverse{
+.contenido.inverso{
   flex-direction:row-reverse;
 }
 
-.content img{
+.contenido img{
   width:500px;
   max-width:100%;
   height:auto;
   display:block;
 }
 
-.text{
+.texto{
   max-width:500px;
   font-size:18px;
   line-height:1.7;
   color:#ddd;
 }
 
-.text p{
+.texto p{
   margin-bottom:20px;
 }
 
 /* Responsive */
 @media(max-width:900px){
 
-  .content,
-  .content.reverse{
+  .contenido,
+  .contenido.inverso{
     flex-direction:column;
     text-align:center;
   }
 
-  .section-title{
+  .titulo-seccion{
     text-align:center;
   }
 
