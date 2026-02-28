@@ -1,0 +1,105 @@
+---
+
+---
+
+<!-- ARTISTAS -->
+<section class="seccion-artistas">
+  <h2 class="titulo-seccion">ARTISTAS INVITADOS</h2>
+
+  <div class="contenido">
+    <img 
+      src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745" 
+      alt="DJ"
+    />
+
+    <div class="texto">
+      <li><ul>Martin Garrix – Mainstage / EDM, uno de los más grandes del mundo.</ul></li>
+      <li><ul>David Guetta – Leyenda del EDM y colaboraciones pop masivas.</ul></li>
+      <li><ul>Tiësto – Histórico y aún en los festivales más grandes.</ul></li>
+      <li><ul>Calvin Harris – EDM y pop electrónico, hits internacionales.</ul></li>
+      <li><ul>Armin van Buuren – Trance icónico, influyente por décadas.</ul></li>
+      <li><ul>Swedish House Mafia – Trance icónico, influyente por décadas.</ul></li>
+      <li><ul>Charlotte de Witte – Techno moderno, reina de festivales europeos.</ul></li>
+      <li><ul>Skrillex – Bass / Dubstep, pionero y mega influyente en el género.</ul></li>
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERIENCIAS -->
+<section class="seccion-experiencias">
+  <h2 class="titulo-seccion">EXPERIENCIAS</h2>
+
+  <div class="contenido inverso">
+    <img 
+      src="https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1200&auto=format&fit=crop" 
+      alt="Festival"
+    />
+
+    <div class="texto">
+      <p>Baila al ritmo de la música electrónica junto al mar, con DJs internacionales y un ambiente lleno de energía. Disfruta de la playa, luces, efectos visuales y momentos inolvidables junto a miles de asistentes que comparten tu pasión por la música.</p>
+      <p>Sumérgete en una experiencia única bailando al ritmo de la música electrónica frente al mar, donde las olas se mezclan con los beats más electrizantes.</p>
+      <p>Déjate llevar por sets de DJs internacionales que harán vibrar cada rincón del escenario, mientras luces deslumbrantes, láseres y efectos visuales crean un espectáculo sensorial que despierta todos tus sentidos.</p>
+    </div>
+  </div>
+</section>
+
+
+<style>
+.seccion-artistas,
+.seccion-experiencias {
+  padding: 80px 10%;
+  background: #0a0a0a;
+  color: white;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.contenido {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.contenido img {
+  width: 50%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.texto {
+  width: 50%;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.texto li {
+  margin-bottom: 12px;
+}
+
+.contenido.inverso {
+  flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contenido {
+    flex-direction: column;
+  }
+
+  .contenido.inverso {
+    flex-direction: column;
+  }
+
+  .contenido img,
+  .texto {
+    width: 100%;
+  }
+}
+</style>
