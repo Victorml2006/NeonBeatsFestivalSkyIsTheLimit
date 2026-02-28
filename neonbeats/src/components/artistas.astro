@@ -7,20 +7,22 @@
   <h2 class="titulo-seccion">ARTISTAS INVITADOS</h2>
 
   <div class="contenido">
-    <img 
+    <img class="elemento izquierda"
       src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745" 
       alt="DJ"
     />
 
-    <div class="texto">
-      <li><ul>Martin Garrix – Mainstage / EDM, uno de los más grandes del mundo.</ul></li>
-      <li><ul>David Guetta – Leyenda del EDM y colaboraciones pop masivas.</ul></li>
-      <li><ul>Tiësto – Histórico y aún en los festivales más grandes.</ul></li>
-      <li><ul>Calvin Harris – EDM y pop electrónico, hits internacionales.</ul></li>
-      <li><ul>Armin van Buuren – Trance icónico, influyente por décadas.</ul></li>
-      <li><ul>Swedish House Mafia – Trance icónico, influyente por décadas.</ul></li>
-      <li><ul>Charlotte de Witte – Techno moderno, reina de festivales europeos.</ul></li>
-      <li><ul>Skrillex – Bass / Dubstep, pionero y mega influyente en el género.</ul></li>
+    <div class="texto elemento derecha">
+      <ul>
+        <li>Martin Garrix – Mainstage / EDM, uno de los más grandes del mundo.</ul></li>
+        <li>David Guetta – Leyenda del EDM y colaboraciones pop masivas.</ul></li>
+        <li>Tiësto – Histórico y aún en los festivales más grandes.</ul></li>
+        <li>Calvin Harris – EDM y pop electrónico, hits internacionales.</ul></li>
+        <li>Armin van Buuren – Trance icónico, influyente por décadas.</ul></li>
+        <li>Swedish House Mafia – Trance icónico, influyente por décadas.</ul></li>
+        <li>Charlotte de Witte – Techno moderno, reina de festivales europeos.</ul></li>
+        <li>Skrillex – Bass / Dubstep, pionero y mega influyente en el género.</ul></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -31,19 +33,36 @@
   <h2 class="titulo-seccion">EXPERIENCIAS</h2>
 
   <div class="contenido inverso">
-    <img 
+    <img class="elemento derecha"
       src="https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1200&auto=format&fit=crop" 
       alt="Festival"
     />
 
-    <div class="texto">
-      <p>Baila al ritmo de la música electrónica junto al mar, con DJs internacionales y un ambiente lleno de energía. Disfruta de la playa, luces, efectos visuales y momentos inolvidables junto a miles de asistentes que comparten tu pasión por la música.</p>
-      <p>Sumérgete en una experiencia única bailando al ritmo de la música electrónica frente al mar, donde las olas se mezclan con los beats más electrizantes.</p>
-      <p>Déjate llevar por sets de DJs internacionales que harán vibrar cada rincón del escenario, mientras luces deslumbrantes, láseres y efectos visuales crean un espectáculo sensorial que despierta todos tus sentidos.</p>
+    <div class="texto elemento izquierda">
+      <p>Baila al ritmo de la música electrónica junto al mar. DJs internacionales, luces, láseres y efectos visuales crean una experiencia única que hace vibrar cada rincón del festival.</p>
+      <p>Disfruta de la playa y el ambiente lleno de energía. Miles de asistentes comparten tu pasión por la música mientras el escenario se ilumina con cada beat.</p>
+      <p>Déjate llevar por sets inolvidables. Sumérgete en un espectáculo sensorial donde la música, las olas y las luces se combinan para despertar todos tus sentidos.</p>
     </div>
   </div>
 </section>
 
+<script>
+  const elementos = document.querySelectorAll('.elemento');
+
+function muestraScroll() {
+  const tamPantalla = window.innerHeight;
+
+  elementos.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < tamPantalla - 50) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', muestraScroll);
+</script>
 
 <style>
 .seccion-artistas,
@@ -63,8 +82,21 @@
 
 .contenido {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin: 40px 0;
   gap: 50px;
+}
+
+.elemento {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+  opacity: 0;
+  transition: all 1s ease-out;
 }
 
 .contenido img {
@@ -73,12 +105,31 @@
   object-fit: cover;
 }
 
-.texto {
-  width: 50%;
-  font-size: 1rem;
-  line-height: 1.8;
+.izquierda {
+  transform: translateX(-200px); 
 }
 
+.derecha {
+  transform: translateX(200px);
+}
+
+.elemento.visible {
+  transform: translateX(0); 
+  opacity: 1;
+}
+
+.texto {
+  width: 50%;
+  font-size: 1.2rem;        
+  line-height: 1.8;        
+  color: #E0E0FF;          
+  padding: 20px;     
+  letter-spacing: 0.1em;
+}
+
+.texto p{
+  margin: 1em;
+}
 .texto li {
   margin-bottom: 12px;
 }
