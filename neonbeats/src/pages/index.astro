@@ -14,19 +14,29 @@ import Grafiti from '../components/grafiti.astro';
     <Artistas />
     <Grafiti />
 	<div id="zonaCartel">
-		<img id="dron" src="/images/dron.png" alt="">
-		<div id="party">
-			<p>PARTY!</p>
-			<p>PARTY!</p>
-			<p>PARTY!</p>
-		</div>
-		<span id="eventoDron">UN ESPECTÁCULO DE DRONES INIGUALABLE</span>
+        <div id="izquierdaCartel">
+          <img id="dron" src="/images/dron.png" alt="">
+            <div id="party">
+                <p id="party1">PARTY!</p>
+                <p id="party2">PARTY!</p>
+                <p id="party3">PARTY!</p>
+            </div>
+            <span id="eventoDron">UN ESPECTÁCULO DE DRONES INIGUALABLE</span>
+        </div>
 		<Cartel></Cartel>
+        <div id="derechaCartel">
+           <img id="fotoFoodtruck" src="/images/foodtruck.png" alt="">
+           <span id="textStreetFood">Street food internacional para recargar energía sin salir del ritmo</span>
+        </div>
 	</div>
 	<Footer></Footer>
 </Layout>
 
 <style>
+    @font-face {
+        font-family: Gladiola;
+        src: url(/fonts/Gladiola.ttf);
+    }
 
 	#zonaCartel{
         width: 100%;
@@ -38,19 +48,86 @@ import Grafiti from '../components/grafiti.astro';
 		position: relative;
     }
 
+    #derechaCartel{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color:aliceblue;
+        width: 50%;
+        height: 100%;
+        align-items: center;
+    }
+
+    #izquierdaCartel{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    #fotoFoodtruck{
+        width: 50%;
+    }
+
+    #textStreetFood{
+        font-family: Gladiola;
+        font-style: italic;
+        font-size: 50px;
+        width: 50%;
+        padding-top: 2em;
+        color: rgb(198, 92, 255);
+        text-shadow: 5px 5px 10px currentColor, -5px -5px 10px currentColor;
+    }
+
 	#dron{
 		position: absolute;
-		top: 20px;
-		left: 20px;
+		top: 2em;
+        left: 10em;
+        animation: subeBaja 3s ease-in-out infinite alternate;
 	}
 	#party{
 		position: absolute;
 		top: 9em;
-		left: 2em;
+		left: 4em;
 		font-family: NeonShine;
 		font-size: 60px;
 		color: yellow;
+        
 	}
+
+    #party1{
+        animation: cambioColor 1s infinite;
+    }
+    #party2{
+        animation: cambioColor 1s infinite 0.33s;
+    }
+    #party3{
+        animation: cambioColor 1s infinite 0.67s;
+    }
+
+
+    @keyframes cambioColor {
+        33%{
+            color: rgb(255, 83, 83);
+        }
+        67%{
+            color: cyan;
+        }
+        100%{
+            color: yellow;
+        }
+    }
+
+    @keyframes subeBaja {
+        20%{
+            transform: translateY(-20px);
+        }
+        80%{
+            transform: translateY(40px);
+        }
+    }
 
 	#party p{
 		margin: 0;
@@ -59,7 +136,7 @@ import Grafiti from '../components/grafiti.astro';
 
 	#eventoDron{
 		font-family: NeonSpark;
-		left: 20px;
+		left: 4em;
 		top: 7em;
 		position: absolute;
 		color: rgb(243, 65, 199);
@@ -81,5 +158,6 @@ import Grafiti from '../components/grafiti.astro';
 		font-family: BigShoulder;
 		src: url(/fonts/big-shoulders-display.black.ttf);
 	}
+    
 
 </style>

@@ -8,26 +8,23 @@
   <div class="contenedor-neon">
     
     <div class="bloque-dj">
-      <svg class="icono-dj" viewBox="0 0 500 550" xmlns="http://www.w3.org/2000/svg">
-        
-      </svg>
+      <img class="icono-dj " src="/images/dj.png" alt="">
+    </div>
+
+    <div class="textFuturo">
+      <span>El futuro suena aquí</span>
     </div>
 
     <div class="bloque-titulo-principal">
-      <h1 class="linea-titulo-uno">siente el</h1>
-      <h1 class="linea-titulo-dos">heat</h1>
-      <h1 class="linea-titulo-tres">se parte de</h1>
-      <h1 class="linea-titulo-cuatro">la música</h1>
-    </div>
+      <h1 class="linea-titulo-uno">Siente el</h1>
+      <h1 class="linea-titulo-dos">beat</h1>
+        <h1 class="linea-titulo-tres">Se parte de</h1>
+        <h1 class="linea-titulo-cuatro">la música</h1>
 
-    <div class="bloque-fiesta">
-      <p class="texto-fiesta-rosa">PARTY!!</p>
-      <p class="texto-fiesta-rosa">PARTY!!</p>
-      <p class="texto-fiesta-verde">PARTY!!</p>
     </div>
 
     <div class="bloque-texto-experiencia">
-      <p>Vive la experiencia<br>que marcará el<br>último año <br>de tu vida!!</p>
+      <p>Vive una experiencia<br>que marcará toda <br>tu vida!!</p>
     </div>
 
     <div class="bloque-texto-amor">
@@ -38,16 +35,32 @@
       <p>El placer<br>que<br>vibra</p>
     </div>
 
+    <div class="bloque-vr">
+      <img class="icono-vrj" src="/images/vr.png" alt="">
+    </div>
+
+    <div>
+      <span class="textVR">Vive la música y la energía del festival como nunca antes gracias a la realidad virtual</span>
+    </div>
+
   </div>
 </main>
 
 <style>
+  
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Press+Start+2P&display=swap');
+
+  @font-face {
+    font-family: Start;
+    src: url(/fonts/PressStart2P-Regular.ttf);
+  }
+
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;700&display=swap');
 
 .seccion-neon-principal {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 60vh;
   background: #000000;
   display: flex;
   align-items: center;
@@ -65,16 +78,13 @@
 .contenedor-neon {
   position: relative;
   width: 100%;
-  height: 100vh;
   perspective: 1000px;
 }
 
 .bloque-dj {
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
+  margin-left: 5em;
 }
 
 .icono-dj {
@@ -96,43 +106,75 @@
 .linea-titulo-tres,
 .linea-titulo-cuatro {
   margin: 5px 0;
-  font-family: 'Oswald', sans-serif;
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  text-transform: lowercase;
+  font-family: Start;
+  font-weight: 100;
 }
 
-.bloque-fiesta {
-  position: absolute;
-  right: 3%;
-  top: 12%;
-  text-align: right;
+.linea-titulo-uno,
+.linea-titulo-dos{
+  font-family: 'Pacifico',cursive;
+  font-size: 5em;
+  font-weight: 100;
+  line-height: 1;
+  color: rgb(247, 167, 211);
+  text-shadow: 5px 0px  cyan, 0px 5px red;
 }
 
-.texto-fiesta-rosa,
-.texto-fiesta-verde {
-  margin: 8px 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
+.linea-titulo-tres,
+.linea-titulo-cuatro{
+  text-shadow: 0.1em 0 0 red,
+    0 0.1em 0 cyan;
+  animation: glitch 1s infinite;
+  -webkit-text-stroke: 1px rgb(169, 25, 133);
 }
-
-.bloque-texto-experiencia {
-  position: absolute;
-  left: 2%;
-  top: 40%;
+@keyframes glitch {
+  0%{
+    text-shadow: 0.1em 0 0 red,
+    0 0.1em 0 cyan;
+  }
+  20%{
+    text-shadow: -0.1em 0.1em 0 red,
+    0.1em 0.1em 0 cyan;
+  }
+  50%{
+    text-shadow: 0.1em 0.1em 0 red,
+    0.1em 0.1em 0 cyan;
+  }
+  70%{
+    text-shadow: 0.1em 0.1 0 red,
+    0 -0.1em 0 cyan;
+  }
+  99%{
+    text-shadow: 0.1em -0.1 0 red,
+    0.1em -0.1em 0 cyan;
+  }
 }
 
 .bloque-texto-amor {
   position: absolute;
-  right: 25%;
-  top: 45%;
+  right: 30%;
+  top: 76%;
+  width: 50px;
+  font-family: Stacy;
+  color: rgb(192, 60, 240);
+  font-size: 3em;
+  line-height: 1;
+  margin-left: 4em;
+  text-shadow: 5px 5px 10px currentColor, -5px -5px 10px currentColor;
 }
 
 .bloque-texto-placer {
   position: absolute;
-  right: 2%;
-  top: 65%;
+  right: 25%;
+  top: 5%;
+  width: 200px;
+  font-family: Stacy;
+  color: rgb(240, 223, 95);
+  font-size: 3em;
+  line-height: 1;
+  text-shadow: 5px 5px 10px currentColor, -5px -5px 10px currentColor;
 }
 
 .bloque-texto-cartel {
@@ -140,6 +182,54 @@
   bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
+}
+@font-face {
+  font-family: Stacy;
+  src: url(/fonts/priestacy_regular.otf);
+}
+
+.bloque-texto-experiencia{
+  width: 350px;
+  font-family: Stacy;
+  color: rgb(199, 199, 246);
+  position: absolute;
+  top: 90%;
+  left: 15%;
+  font-size: 3em;
+  line-height: 1;
+  text-shadow: 5px 5px 10px currentColor, -5px -5px 10px currentColor;
+}
+
+.textFuturo{
+  width: 170px;
+  font-family: Stacy;
+  color: rgb(157, 246, 119);
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  font-size: 3em;
+  line-height: 1;
+  text-shadow: 5px 5px 10px currentColor, -5px -5px 10px currentColor;
+}
+
+.bloque-vr{
+  position: absolute;
+  right: 7%;
+  top: 5%;
+}
+
+.textVR{
+  position: absolute;
+  right: 2%;
+  top: 75%;
+  display: flex;
+  width: 400px;
+  font-family: Stacy;
+  font-size: 30px;
+  line-height: 1;
+  font-size: 3em;
+  color: cyan;
+  text-shadow: 5px 5px 10px currentColor, -5px -5px 10px currentColor;
 }
 
 </style>
