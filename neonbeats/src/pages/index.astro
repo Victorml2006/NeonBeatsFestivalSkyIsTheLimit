@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import Cartel from '../components/Cartel.astro';
 import Artistas from '../components/artistas.astro';
 import Grafiti from '../components/grafiti.astro';
+import Ticket from '../components/Ticket.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -34,15 +35,17 @@ import Grafiti from '../components/grafiti.astro';
           <p id="party2">PARTY!</p>
           <p id="party3">PARTY!</p>
         </div>
-        <span id="eventoDron">UN ESPECTACULO DE DRONES INIGUALABLE</span>
+        <span id="eventoDron">UN ESPECTÁCULO DE DRONES INIGUALABLE</span>
       </div>
       <Cartel></Cartel>
       <div id="derechaCartel">
         <img id="fotoFoodtruck" src="/images/foodtruck.png" alt="" />
-        <span id="textStreetFood">Street food internacional para recargar energia sin salir del ritmo</span>
+        <span id="textStreetFood">Street food internacional para recargar energía sin salir del ritmo</span>
       </div>
     </div>
   </section>
+  <div id="espacioExtra"></div>
+  <Ticket></Ticket>
 
   <Footer></Footer>
 </Layout>
@@ -184,5 +187,11 @@ import Grafiti from '../components/grafiti.astro';
   @font-face {
     font-family: BigShoulder;
     src: url(/fonts/big-shoulders-display.black.ttf);
+  }
+
+  #espacioExtra{
+    width: 100%;
+    height: 8em;
+    background-color: black;
   }
 </style>
